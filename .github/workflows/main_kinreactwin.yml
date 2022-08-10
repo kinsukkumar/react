@@ -17,7 +17,7 @@ jobs:
 
       - name: copy build
         run: |
-          copy /build ./build
+          copy package.json .
 
   deploy:
     runs-on: windows-latest
@@ -31,4 +31,4 @@ jobs:
           app-name: 'kinreactwin'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_59EB9D7EA7C44E1EA3F952DB47CFB8E8 }}
-          package: ./build
+          package: .
