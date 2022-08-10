@@ -11,7 +11,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
           
@@ -19,15 +19,15 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
          name: node-app
-         path: build/
+         path: ./build
 
   deploy:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
        
      - name: Download artifact from build job
-       uses: actions/download-artifact@v2
+       uses: actions/download-artifact@v3
        with:
         name: node-app
         
